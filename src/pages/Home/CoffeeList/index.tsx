@@ -4,6 +4,7 @@ import { Coffee } from './Coffee'
 import { CoffeeContent, CoffeeListContainer, CoffeeListWrapper } from './style'
 
 type CoffeeType = {
+  id: number
   name: string
   description: string
   image: string

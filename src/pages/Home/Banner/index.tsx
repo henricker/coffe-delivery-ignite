@@ -24,8 +24,8 @@ export function Banner() {
         <img
           src={BannerCupOfCoffe}
           alt="Cup of coffee"
-          width={476}
-          height={360}
+          width={'29.75rem'}
+          height={'22.5rem'}
         />
       </BannerContentContainer>
     </BannerWrapper>

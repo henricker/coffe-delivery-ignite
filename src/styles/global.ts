@@ -8,13 +8,15 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 62.5%;
+    font-size: 100%;
   }
 
   body {
     background: ${(props) => props.theme.colors['gray-100']};
     color: ${(props) => props.theme.colors['gray-700']};
     -webkit-font-smoothing: antialiased;
+
+    width: 100%;
   }
 
   body,

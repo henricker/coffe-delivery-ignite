@@ -15,7 +15,7 @@ export const CoffeeContent = styled.div`
   > h2 {
     font-family: ${(props) => props.theme.fonts.header};
     font-weight: 800;
-    font-size: ${(props) => props.theme.fontSize[32]};
+    font-size: 2rem;
   }
 `
 
@@ -23,6 +23,6 @@ export const CoffeeListContainer = styled.ul`
   list-style: none;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24.4rem, auto));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, auto));
   gap: 4rem 3.2rem;
 `

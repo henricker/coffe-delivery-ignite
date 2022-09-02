@@ -13,6 +13,20 @@ export const BannerContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  img {
+    width: 29.75rem;
+    height: 22.5rem;
+  }
+
+  @media screen and (max-width: 1020px) {
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    img {
+      width: 40rem;
+    }
+  }
 `
 
 export const PresentationContentContainer = styled.div`
@@ -28,7 +42,7 @@ export const TextBannerContainer = styled.div`
   gap: 1rem;
 
   h2 {
-    font-size: ${(props) => props.theme.fontSize[48]};
+    font-size: 3rem;
     font-family: ${(props) => props.theme.fonts.header};
     line-height: 3.9rem;
     color: ${(props) => props.theme.colors['gray-900']};
@@ -36,7 +50,14 @@ export const TextBannerContainer = styled.div`
   }
 
   p {
-    font-size: ${(props) => props.theme.fontSize[20]};
+    font-size: 1.25rem;
     color: ${(props) => props.theme.colors['gray-800']};
+  }
+
+  @media screen and (max-width: 881px) {
+    h2,
+    p {
+      text-align: center;
+    }
   }
 `

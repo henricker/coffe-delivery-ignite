@@ -1,22 +1,40 @@
 import { Minus, Plus } from 'phosphor-react'
+import { useContext } from 'react'
+import { CoffeeCartContext } from '../../../context/coffee-cart'
+import {
+  DecreaseQuantity,
+  IncreaseQuantity,
+} from '../../../reducers/coffee-cart/actions'
 import { ButtonContainer } from './style'
 
 type PlusMinusShoppingCardButtonProps = {
-  onClickMinus?: () => void
-  onClickPlus?: () => void
+  id: number
+  heightButton?: string | number
 }
 
 export function PlusMinusShoppingCardButton({
-  onClickMinus,
-  onClickPlus,
+  id,
+  ...rest
 }: PlusMinusShoppingCardButtonProps) {
+  const { state, dispatch } = useContext(CoffeeCartContext)
+
+  const quantity = state.items?.find((item) => item.id === id)?.quantity || 0
+
+  function handleDispatchIncrease() {
+    dispatch(IncreaseQuantity(id))
+  }
+
+  function handleDispatchDecrease() {
+    dispatch(DecreaseQuantity(id))
+  }
+
   return (
-    <ButtonContainer>
-      <button onClick={onClickMinus}>
+    <ButtonContainer {...rest}>
+      <button onClick={() => handleDispatchDecrease()}>
         <Minus size={14} weight="fill" />
       </button>
-      <span>1</span>
-      <button onClick={onClickPlus}>
+      <span>{quantity}</span>
+      <button onClick={() => handleDispatchIncrease()}>
         <Plus size={14} weight="fill" />
       </button>
     </ButtonContainer>

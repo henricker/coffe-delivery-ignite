@@ -5,4 +5,6 @@ export const DefaultLayoutContainer = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  gap: 5.875rem;
 `

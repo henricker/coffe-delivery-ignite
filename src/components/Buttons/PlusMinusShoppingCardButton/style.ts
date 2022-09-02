@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export const ButtonContainer = styled.div`
+type ButtonContainerProps = {
+  heightButton?: string | number
+}
+
+export const ButtonContainer = styled.div<ButtonContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -8,7 +12,7 @@ export const ButtonContainer = styled.div`
   background: ${(props) => props.theme.colors['gray-400']};
   padding: 0.5rem 0.53rem;
   border-radius: 6px;
-  height: 4rem;
+  height: ${(props) => (props.heightButton ? props.heightButton : '2.375rem')};
 
   button {
     cursor: pointer;
@@ -24,6 +28,6 @@ export const ButtonContainer = styled.div`
   }
 
   span {
-    font-size: ${(props) => props.theme.fontSize[16]};
+    font-size: 1rem;
   }
 `

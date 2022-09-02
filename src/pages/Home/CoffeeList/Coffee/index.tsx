@@ -1,4 +1,5 @@
 import { ShoppingCart } from 'phosphor-react'
+import { Link } from 'react-router-dom'
 import { PlusMinusShoppingCardButton } from '../../../../components/Buttons/PlusMinusShoppingCardButton'
 import { realCurrencyFormatter } from '../../../../utils/format-real-currency'
 import {
@@ -11,6 +12,7 @@ import {
 
 type CoffeeTypeProps = {
   coffee: {
+    id: number
     name: string
     description: string
     image: string
@@ -35,10 +37,12 @@ export function Coffee({ coffee }: CoffeeTypeProps) {
       <PriceAndShoppingCartContainer>
         <h2>{realCurrencyFormatter.format(coffee.price)}</h2>
         <ButtonsContainer>
-          <PlusMinusShoppingCardButton />
-          <ButtonCart>
-            <ShoppingCart size={22} weight="fill" />
-          </ButtonCart>
+          <PlusMinusShoppingCardButton id={coffee.id} />
+          <Link to="/checkout">
+            <ButtonCart>
+              <ShoppingCart size={22} weight="fill" />
+            </ButtonCart>
+          </Link>
         </ButtonsContainer>
       </PriceAndShoppingCartContainer>
     </CoffeeContainer>

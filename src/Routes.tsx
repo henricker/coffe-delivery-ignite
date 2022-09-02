@@ -1,14 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import { DefaultLayout } from './layouts/default-layout'
 import { Home } from './pages/Home'
-import { ShoppingCart } from './pages/ShoppingCart'
+import { Checkout } from './pages/Checkout'
 
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/shopping-cart" element={<ShoppingCart />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Route>
     </Routes>
   )
